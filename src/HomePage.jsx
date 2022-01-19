@@ -10,7 +10,7 @@ const HomePage = () => {
             <div className='w-screen h-screen bg-gray-900'>
                 <Header/>
             </div>
-            <div className='w-screen h-screen'>
+            <div className='w-screen h-screen '>
                 <AboutMe />
             </div>
         </div>
