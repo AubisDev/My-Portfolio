@@ -25,6 +25,9 @@ module.exports = {
         'neon3': '-150px 30px 75px 25px #ff8c12',
         'neon4': '150px -30px 75px 25px #0ff',
       },
+      dropShadow:{
+        'items-logo': '0px 35px 35px rgba(0, 255, 255, 0.5)',
+      }
     },
   },
   plugins: [],
