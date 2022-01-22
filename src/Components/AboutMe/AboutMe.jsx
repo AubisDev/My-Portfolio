@@ -4,7 +4,8 @@ import React, { lazy, useEffect, useState } from 'react'
 import TypeIt from "typeit-react";
 
 const AboutMe = () => {
-
+    const openTag = '<';
+    const closeTag = ' />';
 
     const timeline = gsap.timeline({
         defaults:{
@@ -35,7 +36,7 @@ const AboutMe = () => {
             {/* About me title */}
             <div className='w-full pt-14 '>
                 <p className='text-3xl font-semibold text-center py-3'>
-                    <span className='text-orange-600 about'>A</span><span className="about2">bout</span><span className='text-orange-600 about'>_</span><span className="about2">me</span>
+                <span className='text-orange-600 about'>{openTag}</span> <span className='text-sky-600 about'>A</span><span className="about2">bout </span><span className="about2">me <span className='text-orange-600'>{closeTag}</span></span>
                 </p>
                     {/* About me text  */}
                 <p className='text-justify text-sm mt-2 p-3 border-2 border-orange-500 shadow-neon2 rounded-t-md leading-6  hover:bg-orange-300/20 duration-300 aboutText'>

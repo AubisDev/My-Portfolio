@@ -26,7 +26,11 @@ module.exports = {
         'neon4': '150px -30px 75px 25px #0ff',
       },
       dropShadow:{
-        'items-logo': '0px 35px 35px rgba(0, 255, 255, 0.5)',
+        'items-logo': '0px 35px 30px rgba(0, 255, 255, 0.5)',
+        'items-logo2': '0px 35px 35px rgba(255, 153, 64, 0.5)'
+      },
+      backgroundColor:{
+        'card' :'linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%)'
       }
     },
   },
