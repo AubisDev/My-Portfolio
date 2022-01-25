@@ -76,7 +76,7 @@ const Header = () => {
             <button
                 className='flex flex-row hover:text-amber-600 group duration-300 download-cv'
             >
-                Download CV <FontAwesomeIcon icon={faFileAlt} className='ml-2 group-hover:text-white group-hover:scale-y-110  ' style={{ fontSize: '20px'}} />
+                Resume <FontAwesomeIcon icon={faFileAlt} className='ml-2 group-hover:text-white group-hover:scale-y-110  ' style={{ fontSize: '20px'}} />
             </button>
           </div>
           <div className="area z-1" >
