@@ -5,14 +5,14 @@ const ContactSection = () => {
 
     const openTag = '<';
     const closeTag = '/>';
-    const inputStyles = 'mt-1 p-2 bg-transparent border border-sky-700 w-4/5 rounded-md  ';
-    const labelStyles = 'flex flex-col w-full my-4 ml-8'
+    const inputStyles = 'mt-1 p-2 bg-transparent border border-sky-700 w-4/5 rounded-md shadow-sm shadow-sky-700 outline-none focus:border-sky-300 ';
+    const labelStyles = 'flex flex-col w-full my-4 ml-8 '
     return (
-        <div className='w-4/5 h-auto m-auto font-body border border-white   relative top-1/2 transform -translate-y-1/2'>
+        <div className='w-4/5 h-auto m-auto font-body   relative top-1/2 transform -translate-y-1/2'>
             <div className='w-full h-full m-auto  text-slate-200 '>
                 <h3 className=' text-3xl text-center'>Contact</h3>
                 <div className='w-full h-full  '>
-                    <h4 className='text-center w-4/5 m-auto mt-4 text-sm'> Please fill this form and i'll reply as soon as i can</h4>
+                    <h4 className='text-center w-4/5 m-auto mt-4 '> Please fill this form and i'll reply as soon as i can 😄</h4>
                     <label className={labelStyles}>
                         Name:
                         <input

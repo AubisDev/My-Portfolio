@@ -46,7 +46,7 @@ const TechSection = () => {
     <div className='w-full h-full bg-gray-900'>
         <div className='w-4/5 text-slate-200 m-auto'>
             <p className='text-center text-3xl font-body font-semibold pt-14 pb-6'>
-                <span className='text-sky-600 title2'> <span className='text-orange-600 title'>{openTag}</span> T</span><span className='title2'>echnologies</span> <span className='text-orange-600 title'>{closeTag}</span>
+                <span className='text-sky-600 title2'> <span className='text-orange-600 title'>{openTag}</span> S</span><span className='title2'>kills</span> <span className='text-orange-600 title'>{closeTag}</span>
             </p>
             <p className='text-sm  font-body pt-2 text-gray-400 flex justify-center subtitle '>Currently working with</p>
             <div className='w-full grid grid-cols-3 gap-5 m-auto pt-3 '>

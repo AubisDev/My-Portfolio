@@ -5,7 +5,7 @@ const ProjectCard = ({ name, imageUrl, githubUrl, liveUrl}) => {
 
 
     const cardContentContainer = 'h-3/5 w-11/12 m-auto rounded-md shadow-md shadow-sky-500 bg-gradient-to-tl via-purple-600 from-sky-600 to-orange-700 p-1 group transition ease-in-out'
-    const cardContentStyles = 'w-full h-1/4 opacity-0 flex flex-col bg-black/90  items-center justify-center  font-body -mt-[80px] relative bottom-0  rounded-t-lg group-hover:opacity-90 group-hover:duration-300 group-hover:transition group-hover:ease-in-out ';
+    const cardContentStyles = 'w-full h-1/4  flex flex-col bg-black/90  items-center justify-center  font-body -mt-[80px] relative bottom-0  rounded-t-lg group-hover:opacity-90 group-hover:duration-300 group-hover:transition group-hover:ease-in-out ';
 
 
     return (

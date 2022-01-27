@@ -35,9 +35,9 @@ const Header = () => {
             .fromTo( Menu, { x:0},{ x:-100, opacity: 1, ease: Power2.easeInOut, duration : 0.5, })
             .fromTo( CV, { x:0},{ x:70, opacity: 1, ease: Power1.easeInOut, duration : 0.5, }, "-=0.5")
             .from( Titulo, { y:-50, y:  50, duration : 0.5, })
-            .from( Titulo1, {x:-100, y:-50, stagger: 0.1, y:  50, duration : 0.5,  })
-            .from( Titulo2, { x:100, y:50, stagger: 0.1, y:  50, duration : 0.5,  })
-            .from( Titulo3, { y:100, stagger: 0.5, y:  50, duration : 0.5, } )
+            .from( Titulo1, {x:-100, y:-50, stagger: 0.05, y:  50, duration : 0.5,  })
+            .from( Titulo2, { x:100, y:50, stagger: 0.05, y:  50, duration : 0.5,  })
+            .from( Titulo3, { y:100, stagger: 0.1, y:  50, duration : 0.5, } )
             .from( aboutSection, { y:100, ease: Power1.easeIn, duration : 1.5, } )
         
     }, []);
@@ -60,7 +60,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='about-section flex flex-col justify-center items-center'>
-                    <p className='text-sm font-body italic text-gray-500 mt-20 font-semibold'>About me</p>
+                    <p className='text-sm font-body italic text-gray-400 mt-20 font-semibold'>About me</p>
                     <FontAwesomeIcon icon={faArrowCircleDown} size='2x' className='text-slate-200 animate-bounce duration-1000 mt-2 bg-orange-600 rounded-full' />
                 </div>
                 
@@ -73,11 +73,13 @@ const Header = () => {
                 >
                     <FontAwesomeIcon icon={faBars} size='2x' className=' ml-2 group-hover:shadow-md ' />
             </button>
-            <button
-                className='flex flex-row hover:text-amber-600 group duration-300 download-cv'
-            >
-                Resume <FontAwesomeIcon icon={faFileAlt} className='ml-2 group-hover:text-white group-hover:scale-y-110  ' style={{ fontSize: '20px'}} />
-            </button>
+            <a
+                    className='flex flex-row hover:text-amber-600 group duration-300 mt-2 download-cv'
+                    download
+                    href='/src/files/Aubis_Resume.pdf'
+                >
+                    Resume <FontAwesomeIcon icon={faFileAlt} className='ml-2 group-hover:text-white group-hover:scale-y-110  ' style={{ fontSize: '20px'}} />
+            </a>
           </div>
           <div className="area z-1" >
             <ul className="circles">
