@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import gsap, { Power2 } from 'gsap/all';
 import React, { useEffect, useState } from 'react';
+import { skillsEffects } from '../../utils/gsapEffects';
 import {getOthersTechs, getTechs} from './TechLogos'
 
 
@@ -9,13 +10,7 @@ import {getOthersTechs, getTechs} from './TechLogos'
 
 const TechSection = () => {
 
-    const timeline = gsap.timeline({
-        defaults:{
-            duration: 0.5,
-            opacity:0,
-            stagger: 0.2,
-        }
-    })
+
 
 
     const [ Technologies, setTechnologies ] = useState([]);
@@ -26,17 +21,7 @@ const TechSection = () => {
     useEffect(() => {
         setTechnologies( getTechs() );
         setStudyingTechs( getOthersTechs() );
-        
-        const techItems = document.querySelectorAll('.item');
-        const Subtitle = document.querySelectorAll('.subtitle');
-        const Title = document.querySelectorAll('.title');
-        const Title2 = document.querySelectorAll('.title2');
-
-        timeline
-            .from( Title, { stagger: 0.2, y:-100 } )
-            .from( Title2, { stagger: 0.2, y:-100 } )
-            .from( Subtitle, { stagger: 0.3, x: -100,} )
-            .from( techItems, { ease:Power2.easeInOut, x: -100, y: 100 })
+        skillsEffects();
 
 
     }, [setTechnologies]); 

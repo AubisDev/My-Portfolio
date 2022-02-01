@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
 import './ProjectSection.css'
 import { getProjectInfo } from './ProjectsInfo';
 import ProjectCard from './ProjectCard/ProjectCard';
+import newID from '../../utils/createId';
+import { projectsEffects } from '../../utils/gsapEffects';
 
 const ProjectSection = () => {
     
@@ -13,20 +14,25 @@ const ProjectSection = () => {
         setProjects( getProjectInfo );
 
     }, [setProjects]);
-    
 
+
+    useEffect(() => {
+        projectsEffects()
+    }, [])
+    
+                                                    
     const openTag = '<';
     const closeTag = '/>';
   return (
     <div className='w-full h- text-slate-200'>
         <div className='w-4/5 max-h-full flex flex-col pt-1 m-auto'>
         <p className='text-3xl font-semibold text-center py-10'>
-            <span className='text-orange-600 about'>{openTag}</span> <span className='text-sky-600 about'>P</span><span className="about2">rojects </span><span className="about2"> <span className='text-orange-600'>{closeTag}</span></span>
+            <span className='text-orange-600 tag'>{openTag}</span><span className="title text-sky-600">Projects </span><span className='text-orange-600 tag'>{closeTag}</span>
         </p>
 
         <div className='h-full w-full '>
             {Projects.map( project => (
-                <div className='w-full h-full mb-16 '>
+                <div key={ newID() } className='w-full h-full mb-16 project'>
                     <ProjectCard key={project.id} {...project} />
                 </div>
             )  )}

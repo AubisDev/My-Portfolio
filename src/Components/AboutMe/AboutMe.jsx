@@ -1,31 +1,13 @@
-import { gsap } from "gsap";
-import { Elastic, Power2, Power3, Power4} from 'gsap/all';
-import React, { lazy, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import TypeIt from "typeit-react";
+import { aboutmeEffects } from "../../utils/gsapEffects";
 
 const AboutMe = () => {
     const openTag = '<';
     const closeTag = ' />';
 
-    const timeline = gsap.timeline({
-        defaults:{
-            opacity: 0,
-            duration: 0.5,
-        }
-    })
-
     useEffect(() => {
-        const aboutTitle = document.querySelectorAll('.about');
-        const aboutRest = document.querySelectorAll('.about2');
-        const text = document.querySelector('.aboutText')
-        const text2 = document.querySelector('.aboutText2')
-
-         timeline
-            .from( aboutTitle,{ x: -500, stagger: 0.05, })
-            .from( aboutRest, { x: -500 , stagger: 0.05,  ease: Elastic.easeInOut.config(1, 0.3),},   )
-            .from( text, { x: -100, y:50, ease: Power2.easeIn,  })
-            .from( text2, { x: 100, y:50, ease: Power3.easeIn,  })
-            
+        aboutmeEffects();
     }, [])
 
     const SuperStrong = ({ children }) => {
