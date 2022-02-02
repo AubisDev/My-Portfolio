@@ -22,7 +22,7 @@ const AboutMe = () => {
                 </p>
                     {/* About me text  */}
                 <p className='text-justify text-sm mt-2 p-3 border-2 border-orange-500 shadow-neon2 rounded-t-md leading-6  hover:bg-orange-300/20 duration-300 aboutText'>
-                    I'm 25 years old. I'm from Venezuela, an electronic engineering student and selftaught developer who loves IT World & Tech. Always trying to learn new thing to increase my knowledge and give a higher quality code.
+                    I'm 25 years old. I'm from Venezuela, an electronic engineering student and selftaught developer who loves IT World & Tech. Always trying to learn new thing to increase my knowledge and be a better developer.
                 </p>
             </div>
 
@@ -36,7 +36,7 @@ const AboutMe = () => {
                     }}
                 >
                     <span className='text-justify italic font-light  bg-opacity-0 '>
-                        I'm a person who gives a high effort to my activities and responsibilities. Even as a selftaught developer, i can work with a team and i'm always willing to learn.
+                        I'm a person who gives a high effort to my activities and responsibilities. As a selft taught developer, i'm always willing to learn.
                     </span>
                 </TypeIt>
             </div>

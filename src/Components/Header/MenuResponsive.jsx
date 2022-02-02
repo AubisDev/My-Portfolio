@@ -22,12 +22,12 @@ const MenuResponsive = ({ setOpenMenu }) => {
     
   return (
     <div 
-        className='absolute h-screen w-4/5 top-0 bg-black/80 z-50 text-slate-200 flex justify-center items-center menu-responsive'
+        className='fixed h-screen w-4/5 top-0 bg-black/80 z-50 text-slate-200 flex justify-center items-center menu-responsive'
         id='menu-container'
     >        
 
         <button 
-            className='absolute top-0 right-0 p-6'
+            className='absolute top-0 right-0 p-6 closeBtn'
             onClick={ closeMenu }
         >
             <FontAwesomeIcon icon={faTimes} size='2x'/>

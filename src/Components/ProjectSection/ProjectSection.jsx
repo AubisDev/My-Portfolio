@@ -19,7 +19,6 @@ const ProjectSection = () => {
     useEffect(() => {
         projectsEffects()
     }, [])
-    
                                                     
     const openTag = '<';
     const closeTag = '/>';
@@ -30,7 +29,7 @@ const ProjectSection = () => {
             <span className='text-orange-600 tag'>{openTag}</span><span className="title text-sky-600">Projects </span><span className='text-orange-600 tag'>{closeTag}</span>
         </p>
 
-        <div className='h-full w-full '>
+        <div className='h-full w-full project-container'>
             {Projects.map( project => (
                 <div key={ newID() } className='w-full h-full mb-16 project'>
                     <ProjectCard key={project.id} {...project} />
@@ -46,6 +45,7 @@ const ProjectSection = () => {
         </div> */}
 
        
+
  
         </div>
 

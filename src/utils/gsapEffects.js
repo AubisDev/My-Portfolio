@@ -27,24 +27,25 @@ export function aboutmeEffects () {
     const text2 = document.querySelector('.aboutText2')
 
     timeline
-        .from( aboutTitle,{ x: -500, stagger: 0.05, })
-        .from( aboutRest, { x: -500 , stagger: 0.05,  ease: Elastic.easeInOut.config(1, 0.3),},   )
+        .from( aboutTitle,{ x: -100, stagger: 0.05, })
+        .from( aboutRest, { x: -100 , stagger: 0.05,  ease: Power2.easeIn,},   )
         .from( text, { x: -100, y:50, ease: Power2.easeIn,  })
         .from( text2, { x: 100, y:50, ease: Power3.easeIn,  })
 
     return
 }
 
-export function skillsEffects() { 
+export function projectsEffects() { 
 
     
     const timeline = gsap.timeline({
         defaults:{
             opacity: 0,
-            duration: 0.5,
+            duration: 0.3,
         }
     })
 
+    const projectContainer = document.querySelector('.project-container');
     const Tags = document.querySelectorAll('.tag');
     const SectionTitle = document.querySelector('.title');
     const Projects = document.querySelectorAll('.project');
@@ -52,6 +53,7 @@ export function skillsEffects() {
      timeline
         .from( Tags,{ x: -500, stagger: 0.05, })
         .from( SectionTitle, { x: -500 , stagger: 0.05,  ease: Power2.easeIn},   )
+        .from( projectContainer, { ease: Power1.easeIn, } )
         .from( Projects, { x: -100, y:50, ease: Power2.easeIn,  })
     
     return
@@ -88,15 +90,14 @@ export function headerEffects(){
     return
 }
 
-export function projectsEffects () {
+export function skillsEffects () {
     const timeline = gsap.timeline({
         defaults:{
             duration: 0.5,
             opacity:0,
-            stagger: 0.2,
         }
     })
-    
+
     const techItems = document.querySelectorAll('.item');
     const Subtitle = document.querySelectorAll('.subtitle');
     const Title = document.querySelectorAll('.title');
@@ -104,9 +105,9 @@ export function projectsEffects () {
 
     timeline
         .from( Title, { stagger: 0.2, y:-100 } )
-        .from( Title2, { stagger: 0.2, y:-100 } )
-        .from( Subtitle, { stagger: 0.3, x: -100,} )
-        .from( techItems, { ease:Power2.easeInOut, x: -100, y: 100 })
+        .from( Title2, { stagger: 0.2, y:-100  } )
+        .from( Subtitle, { stagger: 0.3, x:-100 } )
+        .from( techItems, { stagger: 0.2, ease:Power2.easeIn, x: -100, y: 100  })
     
     return
 }

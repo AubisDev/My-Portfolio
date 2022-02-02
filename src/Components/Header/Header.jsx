@@ -5,6 +5,8 @@ import './Header.css';
 import BackgroundEffect from './BackgroundEffect';
 import MenuResponsive from './MenuResponsive';
 import { headerEffects } from '../../utils/gsapEffects';
+import profilePicture from '../../img/profile.png'
+import newID from '../../utils/createId';
 
 const Header = () => {
 
@@ -16,24 +18,25 @@ const Header = () => {
     }, []);
 
     const handleClick = (e) => {
-        //If i click outside of the menu, it close
-        (e.target.id !== 'menu-container' && openMenu  && !e.target.className.includes('menu-item')) && setOpenMenu(false)
+        //If i click outside of the menu, it closes
+        (e.target.id !== 'menu-container' && openMenu  && !e.target.className.includes('menu-item') && !e.target.className.includes('closeBtn'))  && setOpenMenu(false)
     }
 
     return (
         <div className='h-full w-full' onClick={ (e) => handleClick(e)} id='container'>
 
             {/* Name picture and description */}
-            <div className='h-full w-4`/5 m-auto flex flex-col justify-center items-center rounded-md  z-50 '  >
+            <div className='h-full w-4/5 m-auto flex flex-col justify-center items-center rounded-md  z-50 '  >
 
                 <div className='flex flex-col mt-10 text-slate-400'>
 
                     <p className=' text-lg text-center font-title  mt-2 font-semibold titulo  text-orange-600'>Hi, I'm:</p>
+
                         {/* Name spliting for letters effects */}
                     <div className='flex flex-col justify-center items-center'>
-
-                        <div className='flex flex-row'>{ 'Aubis'.split('').map( letter => <span className='font-title text-6xl  text-slate-200 italic font-semibold titulo1'>{letter}</span> )}</div>
-                        <div className='flex flex-row+'>{ 'Sanchez'.split('').map( letter => <span className='font-title text-6xl  text-slate-200 italic font-semibold titulo2'>{letter}</span> )}</div>
+                        <img src={profilePicture} alt='aubis sanchez perfil profile' className={`h-48 w-48 object-cover object-center my-2 rounded-full shadow-profile shadow-sky-900 border ${ openMenu ? 'z-50' : 'z-[100]' } photo `} />
+                        <div className='flex flex-row'>{ 'Aubis'.split('').map( letter => <span key={newID()} className='font-title text-5xl text-slate-200 italic font-semibold titulo1'>{letter}</span> )}</div>
+                        <div className='flex flex-row+'>{ 'Sanchez'.split('').map( letter => <span key={newID()} className='font-title text-5xl  text-slate-200 italic font-semibold titulo2'>{letter}</span> )}</div>
 
                     </div>
                         {/* Front end developer */}

@@ -5,7 +5,7 @@ import ContactSection from './Components/ContactSection/ContactSection'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
 import ProjectSection from './Components/ProjectSection/ProjectSection'
-import TechSection from './Components/TechSection/TechSection'
+import SkillsSection from './Components/SkillsSection/SkillsSection'
 
 const HomePage = () => {
 
@@ -27,18 +27,17 @@ const HomePage = () => {
 
 
       const listenToScroll = () => {
-        let showAboutMeHeight = 350;
+        let showAboutMeHeight = 400;
         let showSkillsHeight = 960;
         let showProjectsHeight = 1600;
         let showContactHeight = 2600;
-        let showFooterHeight = 3250;
+        let showFooterHeight = 3000;
         const winScroll = document.body.scrollTop || 
             document.documentElement.scrollTop;
         setHeight(winScroll);
     
         if ( winScroll > showAboutMeHeight) {  
             setAboutMeVisible(true)
-
         }
         if ( winScroll > showSkillsHeight) {  
             setSkillVisible(true)
@@ -63,12 +62,11 @@ const HomePage = () => {
            
                
             <section className='w-screen h-screen '>
-                {aboutMeVisible && <AboutMe />
-                }
+                {aboutMeVisible && <AboutMe /> }
             </section>
     
             <section className='w-screen h-screen'>
-                { SkillsVisible &&  <TechSection /> }
+                { SkillsVisible &&  <SkillsSection /> }
             </section>
             <section className={`w-screen ${ projectsVisible ? 'h-auto' : 'h-screen' } `}>
                 { projectsVisible && <ProjectSection/> }
