@@ -25,22 +25,43 @@ const Header = () => {
     return (
         <div className='h-full w-full' onClick={ (e) => handleClick(e)} id='container'>
 
+            <div className='w-full flex flex-row justify-between text-slate-100 z-50 '>
+
+            <button
+                className=' rounded-full text-slate-400 hover:scale-110 duration-300 group pl-4  z-50 '
+                onClick={ () => setOpenMenu( true )}
+            >
+                    <FontAwesomeIcon icon={faBars} size='2x' className=' ml-2 group-hover:shadow-md block md:hidden' />
+            </button>
+            <a
+                className='flex flex-row items-center hover:text-amber-600 group duration-300 p-8  z-50 sm:text-lg'
+                download
+                href='/src/files/Aubis_Resume.pdf'
+            >
+                Resume 
+                <FontAwesomeIcon icon={faFileAlt} className='ml-2 group-hover:text-white group-hover:scale-y-110' style={{ fontSize: '20px'}} />
+            </a>
+            </div>
+
+
             {/* Name picture and description */}
             <div className='h-full w-4/5 m-auto flex flex-col justify-center items-center rounded-md  z-50 '  >
 
-                <div className='flex flex-col mt-10 text-slate-400'>
+                <div className='flex flex-col -mt-32 text-slate-400'>
 
-                    <p className=' text-lg text-center font-title  mt-2 font-semibold titulo  text-orange-600'>Hi, I'm:</p>
+                    <p className=' text-lg md:text-2xl text-center font-title  mt-2 font-semibold titulo  text-orange-600'>Hi, I'm:</p>
 
                         {/* Name spliting for letters effects */}
                     <div className='flex flex-col justify-center items-center'>
-                        <img src={profilePicture} alt='aubis sanchez perfil profile' className={`h-48 w-48 object-cover object-center my-2 rounded-full shadow-profile shadow-sky-900 border ${ openMenu ? 'z-50' : 'z-[100]' } photo `} />
-                        <div className='flex flex-row'>{ 'Aubis'.split('').map( letter => <span key={newID()} className='font-title text-5xl text-slate-200 italic font-semibold titulo1'>{letter}</span> )}</div>
-                        <div className='flex flex-row+'>{ 'Sanchez'.split('').map( letter => <span key={newID()} className='font-title text-5xl  text-slate-200 italic font-semibold titulo2'>{letter}</span> )}</div>
+                        <img src={profilePicture} alt='aubis sanchez perfil profile' className={`h-48 w-48 object-cover object-center my-4 rounded-full shadow-profile shadow-sky-900 border ${ openMenu ? 'z-50' : 'z-[100]' } photo `} />
+                        <div className='flex flex-col md:px-4 md:flex-row md:justify-center md:items-center'>
+                            <div className='flex flex-row justify-center'>{ 'Aubis'.split('').map( letter => <span key={newID()} className='font-title text-5xl md:text-6xl text-slate-200 italic font-semibold titulo1'>{letter}</span> )}</div>
+                            <div className='flex flex-row pl-0 md:pl-4'>{ 'Sanchez'.split('').map( letter => <span key={newID()} className='font-title text-5xl md:text-6xl  text-slate-200 italic font-semibold titulo2'>{letter}</span> )}</div>
 
+                        </div>
                     </div>
                         {/* Front end developer */}
-                    <div className='flex flex-row text-3xl font-semibold text-center text-orange-600 md:text-xl font-title mt-2'>
+                    <div className='flex flex-row text-3xl font-semibold justify-center text-orange-600 md:text-3xl font-title mt-2 '>
                        
                         <span className=' titulo3'>Front-</span>
                         <span className='titulo3 mr-2 align-center'>end</span>
@@ -60,23 +81,7 @@ const Header = () => {
             </div>
 
             {/* CV and Menu Button */}
-          <div className='flex flex-row justify-center absolute top-0 left-0 py-6 px-2 text-slate-100 w-full z-50 '>
-
-            <button
-                className=' rounded-full text-slate-400 mx-2 hover:scale-110 duration-300 group menu'
-                onClick={ () => setOpenMenu( true )}
-            >
-                    <FontAwesomeIcon icon={faBars} size='2x' className=' ml-2 group-hover:shadow-md ' />
-            </button>
-            <a
-                className='flex flex-row hover:text-amber-600 group duration-300 mt-2 download-cv'
-                download
-                href='/src/files/Aubis_Resume.pdf'
-            >
-                Resume 
-                <FontAwesomeIcon icon={faFileAlt} className='ml-2 group-hover:text-white group-hover:scale-y-110' style={{ fontSize: '20px'}} />
-            </a>
-          </div>
+          
 
           {/* Background squared Effect */}
           <BackgroundEffect/>

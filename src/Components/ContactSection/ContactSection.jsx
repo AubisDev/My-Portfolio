@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
-import { contactEffects } from '../../utils/gsapEffects';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { SendEmail } from '../../utils/FormEmailSend';
+import { contactEffects } from '../../utils/gsapEffects';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+
 
 
 const ContactSection = () => {
@@ -15,7 +19,7 @@ const ContactSection = () => {
     }).required();
       
     
-    const { register, handleSubmit, } = useForm({
+    const { register, handleSubmit, reset } = useForm({
         resolver: yupResolver(schema),
       });
 
@@ -25,7 +29,10 @@ const ContactSection = () => {
     }, []);
     
     
-
+    const handleSendFormEmail = (formData) => { 
+       SendEmail(formData)
+       reset();
+    }
 
     const openTag = '<';
     const closeTag = '/>';
@@ -38,7 +45,7 @@ const ContactSection = () => {
                 <h3 className=' text-3xl text-center'>Contact</h3>
                 <div className='w-full h-full  '>
                     <h4 className='text-center w-4/5 m-auto mt-4 '> Please fill this form and i'll reply as soon as i can 😄</h4>
-                    <form onSubmit={handleSubmit(d => console.log(d))} className='flex flex-col justify-center items-center mt-8 border-white'>
+                    <form onSubmit={handleSubmit(formData => handleSendFormEmail(formData))} className='flex flex-col justify-center items-center mt-8 border-white'>
                         <label className={labelStyles}>Name:</label>
                         <input {...register("name")} className={inputStyles} autoComplete='off' />
                         <label className={labelStyles}>Subject:</label>

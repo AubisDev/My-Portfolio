@@ -55,26 +55,26 @@ const HomePage = () => {
 
 
     return (
-        <div>
-            <section className='w-screen h-screen '>
+        <div className='w-screen '>
+            <section className='w-full h-screen '>
                 <Header/>
             </section>
            
                
-            <section className='w-screen h-screen '>
+            <section className='w-full h-screen '>
                 {aboutMeVisible && <AboutMe /> }
             </section>
     
-            <section className='w-screen h-screen'>
+            <section className='wfulln h-screen'>
                 { SkillsVisible &&  <SkillsSection /> }
             </section>
-            <section className={`w-screen ${ projectsVisible ? 'h-auto' : 'h-screen' } `}>
+            <section className={`w-full ${ projectsVisible ? 'h-auto' : 'h-screen' } `}>
                 { projectsVisible && <ProjectSection/> }
             </section>
-            <section className='w-screen h-screen '>
+            <section className='w-full h-screen '>
                 { contactVisible && <ContactSection/> }
             </section>
-            <section className='w-screen h-[30vh] bg-sky-900'>
+            <section className='w-full h-[30vh] bg-sky-900'>
                 { footerVisible && <Footer/> }
             </section>
         </div>

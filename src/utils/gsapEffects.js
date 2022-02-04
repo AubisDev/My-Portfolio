@@ -25,7 +25,6 @@ export function aboutmeEffects () {
     const aboutRest = document.querySelectorAll('.about2');
     const text = document.querySelector('.aboutText')
     const text2 = document.querySelector('.aboutText2')
-
     timeline
         .from( aboutTitle,{ x: -100, stagger: 0.05, })
         .from( aboutRest, { x: -100 , stagger: 0.05,  ease: Power2.easeIn,},   )
@@ -68,7 +67,6 @@ export function headerEffects(){
             ease: Elastic.easeInOut.config(2.5, 1)
         }
     })
-
     const Titulo = document.querySelector('.titulo');        
     const Titulo1 = document.querySelectorAll('.titulo1');
     const Titulo2 = document.querySelectorAll('.titulo2');
