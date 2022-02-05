@@ -26,10 +26,10 @@ export function aboutmeEffects () {
     const text = document.querySelector('.aboutText')
     const text2 = document.querySelector('.aboutText2')
     timeline
-        .from( aboutTitle,{ x: -100, stagger: 0.05, })
-        .from( aboutRest, { x: -100 , stagger: 0.05,  ease: Power2.easeIn,},   )
-        .from( text, { x: -100, y:50, ease: Power2.easeIn,  })
-        .from( text2, { x: 100, y:50, ease: Power3.easeIn,  })
+        .from( aboutTitle,{ x: -100, stagger: 0.1, })
+        .from( aboutRest, { x: -100 , stagger: 0.1,  ease: Power2.easeIn,},   )
+        .fromTo( text, { x: -100, y:50, ease: Power2.easeIn},{ x:0, y:0, opacity: 1 })
+        .fromTo( text2, { x: 100, y:50, ease: Power3.easeIn},{ x:0, y:0, opacity: 1 })
 
     return
 }

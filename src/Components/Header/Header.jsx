@@ -1,6 +1,6 @@
 import { faFileAlt, faArrowCircleDown, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useLayoutEffect, useState} from 'react'
 import './Header.css';
 import BackgroundEffect from './BackgroundEffect';
 import MenuResponsive from './MenuResponsive';
@@ -12,7 +12,7 @@ const Header = () => {
 
     const [openMenu, setOpenMenu] = useState(false);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         headerEffects();
         
     }, []);

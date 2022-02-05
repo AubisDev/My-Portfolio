@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import TypeIt from "typeit-react";
 import { aboutmeEffects } from "../../utils/gsapEffects";
 
@@ -6,7 +6,7 @@ const AboutMe = () => {
     const openTag = '<';
     const closeTag = ' />';
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         aboutmeEffects();
     }, [])
 

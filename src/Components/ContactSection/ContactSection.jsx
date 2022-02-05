@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -23,7 +23,7 @@ const ContactSection = () => {
         resolver: yupResolver(schema),
       });
 
-    useEffect(() => {
+      useLayoutEffect(() => {
 
       contactEffects();
     }, []);

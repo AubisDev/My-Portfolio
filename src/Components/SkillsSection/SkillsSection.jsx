@@ -1,6 +1,6 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { skillsEffects } from '../../utils/gsapEffects';
 import {getOthersTechs, getTechs} from './TechLogos'
 
@@ -14,7 +14,7 @@ const SkillsSection = () => {
     const openTag = '<';
     const closeTag = ' />';
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         setTechnologies( getTechs() );
         setStudyingTechs( getOthersTechs() );
         skillsEffects();

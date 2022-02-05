@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import './ProjectSection.css'
 import { getProjectInfo } from './ProjectsInfo';
 import ProjectCard from './ProjectCard/ProjectCard';
@@ -16,7 +16,7 @@ const ProjectSection = () => {
     }, [setProjects]);
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         projectsEffects()
     }, [])
                                                     
