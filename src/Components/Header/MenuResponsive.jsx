@@ -18,7 +18,11 @@ const MenuResponsive = ({ setOpenMenu }) => {
 
     }, []);
 
- 
+    const handleShowMenuSection = (section) => {
+        let sectionToShow  = document.querySelector(`#${section.toLowerCase()}`);
+        sectionToShow.scrollIntoView({behavior: 'smooth' });
+        closeMenu();
+    }
     
   return (
     <div 
@@ -27,15 +31,19 @@ const MenuResponsive = ({ setOpenMenu }) => {
     >        
 
         <button 
-            className='absolute top-0 right-0 p-6 closeBtn'
+            className='absolute top-0 right-0 mt-4 p-4 closeBtn'
             onClick={ closeMenu }
         >
             <FontAwesomeIcon icon={faTimes} size='2x'/>
         </button>
 
         <ul className='w-full'>
-            {['About me', 'Skills','Projects','Contact'].map( section => (
-                <li key={ newID() } className='w-full py-8 text-center text-xl font-body hover:bg-sky-600 menu-item'>{section}</li>
+            {['Home', 'About', 'Skills','Projects','Contact'].map( section => (
+                <li 
+                    key={ newID() } 
+                    className='w-full py-8 text-center text-xl font-body hover:bg-sky-600 menu-item'
+                    onClick={() => handleShowMenuSection(`${section}`)}
+                >{section}</li>
             ) )}
         </ul>
     </div>

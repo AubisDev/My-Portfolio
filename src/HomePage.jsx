@@ -1,4 +1,3 @@
-import gsap from 'gsap/all'
 import React, { useEffect, useState } from 'react'
 import AboutMe from './Components/AboutMe/AboutMe'
 import ContactSection from './Components/ContactSection/ContactSection'
@@ -56,25 +55,26 @@ const HomePage = () => {
 
     return (
         <div className='w-screen '>
-            <section className='w-full h-screen '>
+            <header className='w-full h-screen ' id='home'>
                 <Header/>
-            </section>
+            </header>
            
-               
-            <section className='w-full h-screen '>
-                {aboutMeVisible && <AboutMe /> }
-            </section>
-    
-            <section className='wfulln h-screen'>
-                { SkillsVisible &&  <SkillsSection /> }
-            </section>
-            <section className={`w-full ${ projectsVisible ? 'h-auto' : 'h-screen' } `}>
-                { projectsVisible && <ProjectSection/> }
-            </section>
-            <section className='w-full h-screen '>
-                { contactVisible && <ContactSection/> }
-            </section>
-            <section className='w-full h-[30vh] bg-sky-900'>
+            <main>
+                <section className='w-full h-screen ' id='about'>
+                    {aboutMeVisible && <AboutMe /> }
+                </section>
+        
+                <section className='wfull h-screen' id='skills'>
+                    { SkillsVisible &&  <SkillsSection /> }
+                </section>
+                <section className={`w-full ${ projectsVisible ? 'h-auto' : 'h-screen' }`} id='projects'>
+                    { projectsVisible && <ProjectSection/> }
+                </section>
+                <section className='w-full h-screen ' id='contact'>
+                    { contactVisible && <ContactSection/> }
+                </section>
+            </main>
+            <section className='w-full h-[20vh] bg-sky-900'>
                 { footerVisible && <Footer/> }
             </section>
         </div>

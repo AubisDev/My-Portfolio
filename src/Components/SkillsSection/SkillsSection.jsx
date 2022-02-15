@@ -37,11 +37,11 @@ const SkillsSection = () => {
 
                 {Technologies.map( tech => (    
                     
-                    <div key={tech.id} className='w-full h-full flex-col m-2 flex items-center justify-center group item'>
+                    <div key={tech.id} className='w-full h-full flex-col m-2 flex items-center justify-center group item '>
                             
-                            {(tech.name === 'Tailwind CSS' || tech.name === 'TypeScript') ? <img src={tech.image} alt={tech.name} className='h-12 w-12 drop-shadow-items-logo'/> : <FontAwesomeIcon icon={tech.image} size='3x' className={`${ tech.color } sm:grayscale sm:hover:grayscale-0 drop-shadow-items-logo`} />
+                            {(tech.name === 'Tailwind CSS' || tech.name === 'TypeScript') ? <img src={tech.image} alt={tech.name} className='h-[3em] w-[3em] group-hover:drop-shadow-items-logo '/> : <FontAwesomeIcon icon={tech.image} size='3x' className={`${ tech.color } group-hover:drop-shadow-items-logo`} />
                             }
-                            <p className='text-xs  sm:group-hover:text-gray-600 font-semibold pt-2 text-gray-300 sm:text-gray-900  '>{tech.name}</p>
+                            <p className='text-xs md:text-sm  sm:group-hover:text-gray-400 font-semibold pt-2 text-gray-300 sm:text-gray-900  '>{tech.name}</p>
                     </div>
                 ) )}
 
@@ -53,11 +53,11 @@ const SkillsSection = () => {
 
                 {studyingTechs.map( tech => (    
                     
-                    <div key={tech.id} className='w-full h-full flex-col m-2 flex items-center group item'>
+                    <div key={tech.id} className='w-full h-full flex-col m-2 gap-4 flex items-center group item'>
                             
-                            {(tech.name === 'Tailwind CSS' || tech.name === 'TypeScript') ? <img src={tech.image} alt={tech.name} className='h-12 w-12  '/> : <FontAwesomeIcon icon={tech.image} size='3x' className={`${ tech.color } sm:grayscale sm:hover:grayscale-0 `} />
+                            {(tech.name === 'Tailwind CSS' || tech.name === 'TypeScript') ? <img src={tech.image} alt={tech.name} className='h-12 w-12 group-hover:drop-shadow-items-logo '/> : <FontAwesomeIcon icon={tech.image} size='3x' className={`${ tech.color } group-hover:drop-shadow-items-logo`} />
                             }
-                            <p className='text-xs  sm:group-hover:text-gray-600 font-semibold pt-2 text-gray-300 sm:text-gray-900  '>{tech.name}</p>
+                            <p className='text-xs  md:text-sm sm:group-hover:text-gray-600 font-semibold pt-2 text-gray-300 sm:text-gray-900 hover:drop-shadow-items-logo '>{tech.name}</p>
                     </div>
                 ) )}
 
